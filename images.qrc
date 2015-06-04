@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>bamboo.bmp</file>
+        <file>hunter.bmp</file>
+        <file>trap.bmp</file>
+        <file>bluebamboo.bmp</file>
+        <file>pandatransparent.bmp</file>
+        <file>grassresize.png</file>
+    </qresource>
+</RCC>
