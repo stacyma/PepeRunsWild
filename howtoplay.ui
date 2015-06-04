@@ -39,8 +39,8 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>466</width>
-     <height>101</height>
+     <width>492</width>
+     <height>121</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -73,6 +73,22 @@
       </property>
       <property name="text">
        <string>Move with arrow keys to eat all the bamboo but be careful of hunters and their traps!</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 10);</string>
+      </property>
+      <property name="text">
+       <string>Sometimes Pepe takes two tries to eat all the bamboo at a patch.</string>
       </property>
      </widget>
     </item>

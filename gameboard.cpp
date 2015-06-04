@@ -74,7 +74,6 @@ gameboard::gameboard(QWidget *parent, size_t board_sz, QString diff) :
     display_score=new QLabel;
     display_score->setNum(score);
     display_score->setStyleSheet("QLabel{font-size: 11pt; font-family: comic sans ms;}");
-    display_score->setAlignment(Qt::AlignRight);
     difficulty_bar->addWidget(bar);
     difficulty_bar->addWidget(display_score);
 
@@ -297,7 +296,7 @@ void gameboard::paintEvent(QPaintEvent *e){
             labels[py*board_size+px]->setScaledContents(true);
         }
         else{
-            labels[px*board_size+py]->clear();
+            labels[py*board_size+px]->clear();
         }
     }
 
@@ -369,7 +368,6 @@ void gameboard::updatePanda(int px, int py, int nx, int ny) {
 
     //if position is same as bamboo, clear bamboo
     if(this->hitBamboo(px, py)){
-        bamboo_vector[bamboo_index]=0;
         updateScore(10); //add 10 points to score when bamboo is eaten
         --bamboo_left;
     }
@@ -565,6 +563,8 @@ bool gameboard::hitBamboo(int x, int y){
     for(size_t i = 0; i < number_bamboo; ++i){
         if(bamboo_positions[i].rx()==x && bamboo_positions[i].ry()==y && bamboo_vector[i]!=0){
             bamboo_index=i;
+            bamboo_vector[bamboo_index]=0;
+
             if(i==number_bamboo-1 && !power_used){
                 special_power=true;
                 updateScore(50); //add 50 points to score when special bamboo is eaten
